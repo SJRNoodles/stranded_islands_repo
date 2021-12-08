@@ -59,6 +59,9 @@ public class CubePlacement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N)){
             building = false;
         }
+        if(building == false){
+            floor.position = new Vector3(0,-2000f,0);
+        }
         if(building == true){
             if(Physics.Raycast(cam.position,cam.forward,out Hit, 15f)){
             floor.position = new Vector3(Mathf.RoundToInt(Hit.point.x) != 0 ? Mathf.RoundToInt(Hit.point.x/5f) * 5f : 3f,
